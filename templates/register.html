@@ -1,0 +1,106 @@
+{% extends "material/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" />
+  <title>Femzo: Register</title>
+  </head>
+<body class="blue-grey lighten-5">
+    <nav class="red lighten-2">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><img src="/static/logo.jpeg" height="65"></li>
+          <li><a href="/" class="brand-logo hoverable">FEMZO</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/" class="hoverable">Home</a></li>
+          <li><a href="/login" class="hoverable">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div id="login-page" class="row">
+    
+    <div class="col s4 offset-s4 card-panel hoverable">
+      <form class="login-form" action = "/register" method="POST">
+        <div class="row">
+          <div class="input-field col s12 center">
+            
+            <p class="center login-form-text grey-text text-darken-2">Please enter your to credentials to register.</p>
+          </div>
+          {% if field_error %}
+          <div class="input-field col s12 center">
+            
+            <p class="center login-form-text" style="color:red">{{field_error}}</p>
+          </div>
+          {% endif %}
+
+          {% if user_exists %}
+          <div class="input-field col s12 center">
+            
+            <p class="center login-form-text" style="color:red">{{user_exists}}</p>
+          </div>
+          {% endif %}
+
+        </div>
+        <div class="row">
+          <div class="input-field col s11">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="username" type="text" name="username">
+            <label for="username" class="center-align">Username</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s11">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password" name="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s11">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="repeat_password" type="password" name="repeat_password">
+            <label for="password">Repeat Password</label>
+          </div>
+        </div>
+        <div class="row">          
+          <div class="input-field col s12 m12 l6  login-text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2 offset-s5">
+            <button type="submit" name="submit" class="btn waves-effect waves-dark hoverable col s20">Register</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 offset-s4">
+            <p class="margin medium-small">Already registered? <a href="/login">Login here</a></p>
+          </div>
+          
+          </div>          
+        </div>
+
+      </form>
+
+    </div>
+    </div>
+  </body>
+  </html>
+
+
+
+{% endblock %}

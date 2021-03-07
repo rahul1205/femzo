@@ -1,0 +1,162 @@
+{% extends "material/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Femzo: Dashboard</title>
+  </head>
+<body class="blue-grey lighten-5">
+    <nav class="red lighten-2">
+      <div class="nav-extended">
+        <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><img src="/static/logo.jpeg" height="65"></li>
+          <li><a href="/home" class="brand-logo hoverable">FEMZO</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/counselling" class="waves-effect hoverable">Counselling/Litigation</a></li>
+          <!-- <li><a href="/litigation">Litigation</a></li> -->
+          <li><a href="#" class="hoverable">Podcast</a></li>
+          <!-- <li><a href="/profile">Profile</a></li> -->
+          <li><a href="/" class="hoverable">Logout</a></li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card hoverable">
+          <h4><p align="center">Please fill this form so that our system can find Therapists and Lawyers who are willing to help you in these difficult times</p></h4>
+          
+          <div class="row">
+            <form class="login-form" action = "/counselling" method="POST">
+              <div class="row">
+                <div class="input-field col s12 center">
+                  
+                  <p class="center login-form-text grey-text text-darken-2">We will keep your identity and responses confidential.</p>
+                </div>
+                {% if error %}
+                <div class="input-field col s12 center">
+                  
+                  <p class="center login-form-text" style="color:red">{{error}}</p>
+                </div>
+                {% endif %}
+
+                {% if success %}
+                <div class="input-field col s12 center">
+                  
+                  <p class="center login-form-text" style="color:green">{{success}}</p>
+                </div>
+                {% endif %}
+
+              </div>
+              <div class="row">
+                <div class="input-field col s10 offset-s1">
+                  <i class="mdi-social-person-outline prefix"></i>
+                  <input id="fullname" type="text" name="fullname">
+                  <label for="fullname" class="center-align">Full Name (optional)</label>
+                </div>
+              </div>
+              <div class="row margin">
+                <div class="input-field col s10 offset-s1">
+                  <i class="material-icons prefix">add_location</i>
+                  <input id="add1" type="text" name="add1">
+                  <label for="add1">Address Line 1 (optional)</label>
+                </div>
+              </div>
+              <div class="row margin">
+                <div class="input-field col s10 offset-s1">
+                  <i class="material-icons prefix">add_location</i>
+                  <input id="add2" type="text" name="add2">
+                  <label for="add2">Address Line 2 (optional)</label>
+                </div>
+              </div>
+
+              <div class="row margin">
+                <div class="input-field col s10 offset-s1">
+                  <i class="material-icons prefix">record_voice_over</i>
+                  <input id="add2" type="text" name="info">
+                  <label for="add2">Anything you want us to know?</label>
+                </div>
+              </div>
+
+              <div class="input-field col s12 center">
+                  
+                  <p class="center login-form-text grey-text text-darken-2">Tell us what services are you interested in?</p>
+              </div>
+
+              <div class="row">
+                <div class="col s3 offset-s2">
+                  <p>
+                    <input type="checkbox" id="counselling" name="services" value="counselling" />
+                    <label for="counselling"></label>
+                    <span>Counselling</span>
+                  </p>
+
+                  <p>
+                    <input type="checkbox" id="litigation" name="services" value="litigation" />
+                    <label for="litigation"></label>
+                    <span>Litigation</span>
+                  </p>
+
+                  <p>
+                    <input type="checkbox" id="podcast" name="services" value="podcast" />
+                    <label for="podcast"></label>
+                    <span>Podcast</span>
+                  </p>
+                  
+                </div>
+              </div>
+
+              <div class="row">          
+                <div class="input-field col s12 m12 l6  login-text">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col 5 offset-s10">
+                  <button type="submit" name="submit" class="btn waves-effect waves-dark hoverable col s20" width="20" >Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- CODE FOR FOOTER -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About Us</h5>
+            <p class="grey-text text-lighten-4">This website a part of the final project submitted for the course Technology Innovation CSCI5193</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Meet the team behind Femzo</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/rahul1205/">Rahul Anand</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/guneet-singh-dhillon/">Guneet Singh Dhillon</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        We have used Materialize CSS (https://materializecss.com/) for writing code of web pages.
+        <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+{% endblock %}

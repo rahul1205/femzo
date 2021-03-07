@@ -1,0 +1,98 @@
+{% extends "material/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" />
+  <title>Femzo: Dashboard</title>
+  </head>
+<body class="blue-grey lighten-5">
+    <nav class="red lighten-2">
+      <div class="nav-extended">
+        <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><img src="/static/logo.jpeg" height="65"></li>
+          <li><a href="/" class="brand-logo hoverable">FEMZO</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/counselling" class="waves-effect hoverable">Counselling/Litigation</a></li>
+          <!-- <li><a href="/litigation">Litigation</a></li> -->
+          <li><a href="#" class="hoverable">Podcast</a></li>
+          <!-- <li><a href="/profile">Profile</a></li> -->
+          <li><a href="/" class="hoverable">Logout</a></li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card hoverable">
+          <h2><p align="center">Upcoming Appointments</p></h2>
+          
+          <div class="row">
+            <div class="col s4">
+              <h4><p align="center">15th April {{ renderhere }}</p></h4>
+            </div>
+            <div class="col s8">
+              <h5><p>Counselling appointment with Dr. Sarah {{ render }} at her office.</p></h5>
+            </div>
+          </div> 
+
+          <div class="row">
+            <div class="col s4">
+              <h4><p align="center">17th April {{ renderhere }}</p></h4>
+            </div>
+            <div class="col s8">
+              <h5><p>Legal appointment with Dr. Vee Lado {{ render }} at his office.</p></h5>
+            </div> 
+          </div>
+
+          <div class="row">
+            <div class="col s4">
+              <h4><p align="center">18th April {{ renderhere }}</p></h4>
+            </div>
+            <div class="col s8">
+              <h5><p>Podcast by Dr. Tu Mera Bai. Link will be emailed to you.{{ render }}</p></h5>
+            </div> 
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- CODE FOR FOOTER -->
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4">This website a part of the final project submitted for the course Technology Innovation CSCI5193</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Meet the team behind Femzo</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/rahul1205/">Rahul Anand</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/guneet-singh-dhillon/">Guneet Singh Dhillon</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            We have used Materialize CSS (https://materializecss.com/) for writing code of web pages.
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
+
+{% endblock %}
